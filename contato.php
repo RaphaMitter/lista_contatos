@@ -2,6 +2,8 @@
 
 class Contato
 {
+class Contato
+{
     private $id;
     private $nome;
     private $telefone;
@@ -18,7 +20,13 @@ class Contato
     public function getId()
     {
         return $this->id;
+    public function getId()
+    {
+        return $this->id;
     }
+    
+    public function getNome()
+    {
     
     public function getNome()
     {
@@ -27,8 +35,14 @@ class Contato
     
     public function getTelefone()
     {
+    
+    public function getTelefone()
+    {
         return $this->telefone;
     }
+    
+    public function getEmail()
+    {
     
     public function getEmail()
     {
