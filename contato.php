@@ -2,8 +2,6 @@
 
 class Contato
 {
-class Contato
-{
     private $id;
     private $nome;
     private $telefone;
@@ -20,13 +18,7 @@ class Contato
     public function getId()
     {
         return $this->id;
-    public function getId()
-    {
-        return $this->id;
     }
-    
-    public function getNome()
-    {
     
     public function getNome()
     {
@@ -35,17 +27,30 @@ class Contato
     
     public function getTelefone()
     {
-    
-    public function getTelefone()
-    {
         return $this->telefone;
     }
     
     public function getEmail()
     {
-    
-    public function getEmail()
-    {
         return $this->email;
+    }
+
+    public function setNome($nome)
+    {
+        // Verificador se o nome não é vazio e tem ao menos duas letras, e não contém número
+        // enfim, se é um nome válido
+        $this->nome = $nome;
+    }
+    
+    public function setTelefone($telefone)
+    {
+        // Verificar se o número é um telefone válido
+        $this->telefone = $telefone;
+    }
+    
+    public function setEmail($email)
+    {
+        // Verificar se um email é válido
+        $this->email = $email;
     }
 }
