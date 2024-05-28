@@ -11,6 +11,7 @@ class ContatoDAO {
         $this->db = Database::getInstance()->getConnection();
     }
 
+    
     public function getById($id) {
         try {
             $sql = "SELECT * FROM contatos_info WHERE id = :id";
@@ -65,6 +66,21 @@ class ContatoDAO {
         }
     }
 
+   
+
+    public function  delete($id) {
+        try {
+            $sql = "DELETE FROM contatos_info WHERE id = :id";
+            
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+            return true;
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
+
     public function update($contato) {
         try {
             $sql = "UPDATE contatos_info SET nome = :nome, telefone = :telefone, email = :email WHERE id = :id";
@@ -82,19 +98,6 @@ class ContatoDAO {
             
             $stmt->execute();
 
-            return true;
-        } catch (PDOException $e) {
-            return false;
-        }
-    }
-
-    public function  delete($id) {
-        try {
-            $sql = "DELETE FROM contatos_info WHERE id = :id";
-            
-            $stmt = $this->db->prepare($sql);
-            $stmt->bindParam(':id', $id);
-            $stmt->execute();
             return true;
         } catch (PDOException $e) {
             return false;
